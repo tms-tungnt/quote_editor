@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+companies = Company.create!([ {name: "KPMG"}, {name:"PwC"} ])
+User.create!([{email: "accountant@kpmg.com", password: 'password',
+            company_id: companies.first.id},
+            {email: "manager@kpmg.com", password: 'password',
+            company_id: companies.first.id},
+            {email: "eavesdropper@pwc.com", password: 'password',
+            company_id: companies[1].id}
+            ])
+Quote.create!(name: "First quote", company_id: companies.first.id)
