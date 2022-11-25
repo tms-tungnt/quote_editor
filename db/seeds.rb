@@ -13,4 +13,5 @@ User.create!([{email: "accountant@kpmg.com", password: 'password',
             {email: "eavesdropper@pwc.com", password: 'password',
             company_id: companies[1].id}
             ])
-Quote.create!(name: "First quote", company_id: companies.first.id)
+quotes = Quote.create!(name: "First quote", company_id: companies.first.id)
+LineItemDate.create!(quote_id: quotes .id, date: Date.current)
