@@ -2,14 +2,15 @@
   margin-top: var(--space-xl);
   margin-bottom: var(--space-xxs);
 
-  &__header {
+  &_header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: var(--space-xs);
+
   }
 
-  &__title {
+  &_title {
     font-size: var(--font-size-xl);
 
     @include media(tabletAndUp) {
@@ -17,7 +18,7 @@
     }
   }
 
-  &__actions {
+  &_actions {
     display: flex;
     gap: var(--space-xs);
   }
