@@ -6,6 +6,7 @@ class QuotesController < ApplicationController
   end
 
   def show
+    @line_item_dates = @quote.line_item_dates.ordered
   end
 
   def new
@@ -32,7 +33,7 @@ class QuotesController < ApplicationController
         format.html { redirect_to quotes_path, notice: "Quote was successfully updated." }
         format.turbo_stream { flash.now[:notice] = "Quote was successfully updated." }
       end
-      
+
     else
       render :edit
     end
